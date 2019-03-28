@@ -5,18 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>canvas.dragGif()</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css">
-    <script src="main.js"></script> -->
+    <!-- <link rel="stylesheet" type="text/css" media="screen" href="main.css"> -->
 </head>
 <body>
     <canvas id="canvas" width="1000" height="1000"></canvas>
 </body>
-<script src="draft.js"></script>
+<script src="drawgif.min.js"></script>
 <script>
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
 const image = new GIF();
 image.src = "nyancat.jpg"; 
-ctx.drawGIF(image, 0, 0, 7580, 600, 8, true);
+ctx.drawGIF(image, 0, 0, 758, 480, 8, true);
 </script>
 </html>

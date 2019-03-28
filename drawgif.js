@@ -10,7 +10,7 @@ CanvasRenderingContext2D.prototype.drawGIF=function(img, a, b, c, d, e, f, g, h,
   img.onload = function(){
     width = img.width;
     height = img.height;
-    if (!dWidth || !dHeight){dWidth = width; dHeight = height};
+    if (!dWidth || !dHeight){dWidth = width / numberOfFrames; dHeight = height};
     if (!sWidth || !sHeight){sWidth = width / numberOfFrames; sHeight = height};
   }
   switch(true){  
@@ -48,7 +48,7 @@ CanvasRenderingContext2D.prototype.drawGIF=function(img, a, b, c, d, e, f, g, h,
       (frameIndex * width + sx) / numberOfFrames, 0+sy,
       sWidth, sHeight,
       dx, dy,
-      dWidth / numberOfFrames, dHeight
+      dWidth, dHeight
     );  
   }
   img.addEventListener("load", loop);
