@@ -4,7 +4,7 @@ class GIF extends Image {
   }
 }
 
-CanvasRenderingContext2D.prototype.drawGif=function(img, width, height, numberOfFrames = 1, repeat = true){ 
+CanvasRenderingContext2D.prototype.drawGIF=function(img, width, height, numberOfFrames = 1, repeat = true){ 
   let frameIndex = 0;
   update = ()=>{
     if (frameIndex < numberOfFrames - 1 && repeat) {frameIndex += 1;}
