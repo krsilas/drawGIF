@@ -1,9 +1,3 @@
-class GIF extends Image {
-  constructor(){
-    super();
-  }
-}
-
 CanvasRenderingContext2D.prototype.drawGIF=function(img, a, b, c, d, e, f, g, h, i, j){
   let sx=0, sy=0, sWidth, sHeight, dx, dy, dWidth, dHeight, numberOfFrames, repeat=true, width, height, frameIndex=0;
   const l = arguments.length;
@@ -30,10 +24,11 @@ CanvasRenderingContext2D.prototype.drawGIF=function(img, a, b, c, d, e, f, g, h,
   }
   function check(f,r){
     numberOfFrames = (typeof f === 'number') ? f : 1;
-    if(r === false) repeat = false;
+    if(!r) repeat = false;
   }
   function loop(){
-    update(); render();
+    update(); 
+    render();
     setTimeout(() => {
       window.requestAnimationFrame(loop)
     }, 100)
@@ -42,7 +37,7 @@ CanvasRenderingContext2D.prototype.drawGIF=function(img, a, b, c, d, e, f, g, h,
     if (frameIndex < numberOfFrames - 1 && repeat) {frameIndex += 1;}
     else {frameIndex = 0;}
   };
-  render = ()=>{
+  render = () => {
     this.drawImage(
       img,
       (frameIndex * width + sx) / numberOfFrames, 0+sy,
